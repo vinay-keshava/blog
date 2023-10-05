@@ -5,6 +5,7 @@ weight: 10
 description: "Mapping of Physical USB ports to Device Names (/dev/sda) on GNU/Linux"
 tags: ["usb", "linux", "gnu/linux" , "gnu"]
 type: post
+draft: true
 ---
 
 ## How to Map Physical USB ports to Device Names on GNU/Linux
