@@ -1,6 +1,6 @@
 ---
 title: Interception Vimproved
-next: /docs/selfhosting/nextcloud
+next: /docs/openldap
 ---
 
 
