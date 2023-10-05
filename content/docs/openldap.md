@@ -1,6 +1,7 @@
 ---
 title: OpenLDAP 
-prev: /docs/selfhosting/nextcloud
+next: /docs/selfhosting/nextcloud
+prev: /docs/interception-vimproved
 ---
 
 ### Directory Service
@@ -336,6 +337,8 @@ userPassword:: am9obg==
 
 #### Modifying existing entries
 
+1. Using ```ldapmodify``` to update entries. 
+
 Now to modify an already added record we use ldapmodify and the attributes that are to be modified are put into a separate file,here ```john-modify.ldif``` and to demonstrate here an OU ```Support```
 is added to the existing entry,along with ```People``` OU.
 
@@ -373,9 +376,54 @@ createTimestamp: 20230928112421Z
 entryCSN: 20230928120656.291224Z#000000#000#000000
 modifiersName: cn=admin,dc=vinay,dc=com
 modifyTimestamp: 20230928120656Z
+```
+
+2.Using ```ldapvi``` to update LDAP entries with a text editor.
+
+```bash{filename="ldapvi example"}
+$  ldapvi -d --host vinay.im 
+```
+```ldapvi```  is a ldap client using which we can search,modify and delete entries which is easier than ```ldapmodify```  instead of adding the updated records in a separate ```ldif``` file.
+ldapvi prompts to open text editor to modify entries,just similar to text editor.
+
+The above command will bind anonmously to hostname, here the hostname is ```vinay.im```.After making necessary changes in the entry save from the text editor.
+```
+# ldapvi -d --host nextcloud.vinay.com
+      3 entries read                                                                                                                                                                        
+add: 0, rename: 0, modify: 1, delete: 0
+Action? [yYqQvVebB*rsf+?] b
+
+
+--- Login
+
+--- Login
+
+--- Login
+Type M-h for help on key bindings.
+
+Filter or DN: cn=admin,dc=vinay,dc=im
+
+    Password: *****
+
+Bound as cn=admin,dc=vinay,dc=im.
+add: 0, rename: 0, modify: 1, delete: 0
+Action? [yYqQvVebB*rsf+?] y
+Done.
+```
+after saving and exiting from text editor, an interactive bash prompt ``` [yYqQvVebB*rsf+?]``` 
+
+```y``` to commit changes.
+
+```e``` to edit changes.
+
+```v``` to view changes as LDIF change records.
+
+```b``` to show login and rebind - we are trying to auth from admin and save the changes to LDAP entries.
+
 
 ```
 [Reference serverfault] https://serverfault.com/questions/290296/ldapadd-ldapmodify-clarifications-needed-about-these-commands
+
 #### Verifying the ```slapd.conf``` Configuration file
 
 ```bash
@@ -386,6 +434,8 @@ config file testing succeeded
 ```-f``` : Specifying an alternative configuration file.
 
 ```-v``` : enable verbose mode.
+
+
 
 #### Conventions in OpenLDAP
 
