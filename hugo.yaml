@@ -30,7 +30,7 @@ menu:
       pageRef: /docs
       weight: 2
     - name: Blog
-      pageRef: blog.md
+      pageRef: /blog
       weight: 3
     - name: Search
       weight: 4
