@@ -3,8 +3,7 @@ title: Interception Vimproved
 next: /docs/openldap
 ---
 
-
-### Setting up Interception Vimproved on  Debian Bookworm
+### Setting up Interception Vimproved on Debian Bookworm
 
 I started learning vim few months ago and wanted to try vim key bindings like shortcuts on my laptop after trying a mechanical hackable keyboard.
 
@@ -16,7 +15,7 @@ This blog post shows how to setup [interception-vimproved](https://github.com/ma
 Installing Dependencies to build interception-vimproved on Debian Bookworm GNU/Linux
  
 ```bash
-$ sudo apt install interception-tools meson libyaml-cpp-dev cmake 
+ sudo apt install interception-tools meson libyaml-cpp-dev cmake 
 ```
 interception-tools is a small set of tools for input events of devices,that can be used to customize the behaviour of input keyboard mappings.
 
