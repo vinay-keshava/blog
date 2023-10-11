@@ -41,13 +41,28 @@ menu:
       url: "https://mastodon.world/@vinaykeshava"
       params:
         icon: mastodon
+  sidebar:
+    - identifier: more
+      name: More
+      params:
+        type: separator
+      weight: 1
+    - identifier: about
+      name: "About"
+      pageRef: "/about"
+      weight: 2
+    - identifier: 
+      name: "Blog↗"
+      url: "/blog/"
+      weight: 3
 
 params:
   navbar:
     displayTitle: true
     displayLogo: true
     logo: 
-      path: /images/vinay.png
+      path: favicon.ico
+      dark: favicon.ico
 
   footer:
     displayCopyright: false
