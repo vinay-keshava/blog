@@ -4,7 +4,6 @@ date: 2022-03-29T20:01:24+05:30
 weight: 10
 description: "Learnings from software freedom camp"
 tags: ["git.fosscommunity.in", "debian", "fsci"]
-type: post
 ---
 
 

@@ -1,9 +1,10 @@
 ---
 title: "Contributing to Debian"
 date: 2022-07-30T20:01:24+05:30
-weight: 10
+authors:
+  - name: John Doe
+    link: https://example.com/johndoe
 description: "Contributing to Debian through packaging "
-type: post
 ---
 
 # Debian 
